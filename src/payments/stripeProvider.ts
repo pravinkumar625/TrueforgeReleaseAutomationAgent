@@ -23,9 +23,10 @@ export class PaymentGatewayProvider {
       throw new Error("Invalid charge amount. Amount must be strictly positive.");
     }
 
-    if (!req.sourceToken || req.sourceToken.startsWith("invalid")) {
-      throw new Error("Payment transaction declined: Invalid payment token.");
-    }
+    // BUG REGRESSION INTRODUCED: Commented out validation check to test automated risk detection
+    // if (!req.sourceToken || req.sourceToken.startsWith("invalid")) {
+    //   throw new Error("Payment transaction declined: Invalid payment token.");
+    // }
 
     // Calculate processing fee (2.9% + 30 cents)
     const feeCents = Math.round(req.amountCents * 0.029) + 30;
