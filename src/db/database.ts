@@ -32,9 +32,10 @@ export class InMemoryDatabase {
 
     const now = new Date();
     const fullRecord: DatabaseRecord = {
-      ...record,
+      id: record.id,
       createdAt: now,
-      updatedAt: now
+      updatedAt: now,
+      ...record
     };
     tableMap.set(record.id, fullRecord);
     return fullRecord;
