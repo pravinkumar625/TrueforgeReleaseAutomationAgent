@@ -1,0 +1,27 @@
+{
+  "name": "enterprise-nexus-platform",
+  "version": "1.5.0",
+  "description": "Enterprise Nexus Platform - Modular Micro-services Core with Automated Git Release Management",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx tsc && node dist/server.js",
+    "test": "npx tsc && node dist/tests/run-all-tests.js",
+    "analyze-release": "npx tsc && node dist/release-manager/cli.js",
+    "simulate-approval": "npx tsc && node dist/release-manager/cli.js --approve",
+    "demo": "npx tsc && node dist/tests/run-all-tests.js && node dist/release-manager/cli.js"
+  },
+  "keywords": [
+    "git-release",
+    "automation",
+    "risk-analysis",
+    "enterprise",
+    "microservices"
+  ],
+  "author": "Engineering Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}
